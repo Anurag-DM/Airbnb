@@ -2,12 +2,13 @@
 const path = require('path');
 
 // External Module
+require('dotenv').config();
+const DB_PATH = process.env.DB_PATH;
 const express = require('express');
 const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 const { default: mongoose } = require('mongoose');
 const multer = require('multer');
-const DB_PATH = "mongodb+srv://anuragadm78_db_user:k6E1E3VjeK4uGP42@completecoding.rt80iu4.mongodb.net/airbnb?appName=CompleteCoding";
 
 //Local Module
 const storeRouter = require("./routes/storeRouter")
