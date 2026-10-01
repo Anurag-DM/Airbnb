@@ -21,6 +21,11 @@ const app = express();
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
+app.locals.photoUrl = (photo) => {
+  if (!photo) return '';
+  if (/^(https?:)?\/\//i.test(photo)) return photo;
+  return `/${photo.replace(/\\/g, '/').replace(/^\/+/, '')}`;
+};
 
 const store = new MongoDBStore({
   uri: DB_PATH,

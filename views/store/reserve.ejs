@@ -6,7 +6,7 @@
       <h1 class="text-3xl font-bold mb-6 text-center text-gray-800">Reserve <%= home.houseName %></h1>
 
       <div class="flex flex-col md:flex-row gap-6 mb-6">
-        <img src="<%= home.photo %>" alt="<%= home.houseName %>" class="w-full md:w-1/2 h-56 object-cover rounded-lg">
+        <img src="<%= photoUrl(home.photo) %>" alt="<%= home.houseName %>" class="w-full md:w-1/2 h-56 object-cover rounded-lg">
         <div>
           <p class="text-gray-600 mb-2"><i class="fas fa-map-marker-alt mr-2"></i><%= home.location %></p>
           <p class="text-lg font-bold text-red-500 mb-2">Rs<%= home.price %> / night</p>
